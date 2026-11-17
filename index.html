@@ -19,10 +19,9 @@
   "@type": ["Organization", "LocalBusiness"],
   "@id": "https://soundhackerbd.com/#organization",
   "name": "Sound Hacker",
-  "alternateName": "সাউন্ড হ্যাকার",
   "url": "https://soundhackerbd.com/",
   "slogan": "Your sound, hacked to perfection.",
-  "description": "Sound Hacker is an audio production house in Kakrail, Dhaka, Bangladesh, offering music production, jingles and ad music, sound design, mixing and mastering, TV and film scores, and voice and radio production.",
+  "description": "Sound Hacker is an audio production house and recording studio in Kakrail, Dhaka, Bangladesh, founded in 2018 by friends Shariful Islam Ghuddy and Md Rizvi Rahman. It composes, records, designs, mixes and masters sound for songs, TV dramas, films, jingles and advertising, NGO campaigns, dubbing and podcasts.",
   "foundingDate": "2018",
   "founder": [
     {"@type": "Person", "name": "Shariful Islam Ghuddy", "url": "https://sharifulislamghuddy.github.io/", "sameAs": ["https://www.wikidata.org/wiki/Q142083054", "https://www.linkedin.com/in/sharifulislamghuddy"]},
@@ -36,7 +35,7 @@
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#0B0A09; --ink2:#141210; --ink3:#1D1A17; --line:#2C2824;
@@ -57,9 +56,9 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-0.
 :focus-visible{outline:2px solid var(--tan);outline-offset:4px}
 
 /* grain */
-.grain{position:fixed;inset:-50%;width:200%;height:200%;pointer-events:none;z-index:90;opacity:.07;
+.grain{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:90;opacity:.07;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  animation:grain 1.2s steps(6) infinite}
+  }
 @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
 
 /* preloader */
@@ -82,7 +81,7 @@ em{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-0.
 @media (hover:hover) and (pointer:fine){body.has-cursor,body.has-cursor a,body.has-cursor button{cursor:none}}
 
 /* nav */
-nav.top{position:fixed;top:0;left:0;right:0;z-index:80;mix-blend-mode:difference}
+nav.top{position:fixed;top:0;left:0;right:0;z-index:80;background:rgba(11,10,9,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:22px;padding-bottom:22px}
 .brand{font-weight:900;font-size:18px;letter-spacing:.22em}
 .links{display:flex;gap:28px;font-size:15px}
@@ -93,7 +92,7 @@ nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:
 .navr{display:flex;gap:18px;align-items:center}
 .snd{display:flex;align-items:center;gap:8px;min-height:44px}
 .snd .bars{display:flex;gap:2px;align-items:end;height:14px}
-.snd .bars i{width:2px;background:#fff;height:3px;transition:height .2s}
+.snd .bars i{width:2px;background:var(--paper);height:3px;transition:height .2s}
 .snd.on .bars i{animation:eq .9s ease-in-out infinite}
 .snd.on .bars i:nth-child(2){animation-delay:.15s}.snd.on .bars i:nth-child(3){animation-delay:.3s}.snd.on .bars i:nth-child(4){animation-delay:.45s}
 @keyframes eq{0%,100%{height:3px}50%{height:14px}}
@@ -133,6 +132,8 @@ nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:
 .reveal-text{margin:0;font-size:clamp(30px,4.2vw,64px);line-height:1.12;letter-spacing:-.025em;font-weight:500}
 .reveal-text .w{opacity:.14;transition:opacity .25s}
 .reveal-text .w.on{opacity:1}
+.story{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;margin-top:64px}
+.story p{margin:0;color:#CFC6BA;font-size:17px;line-height:1.7}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--line);margin-top:80px;border:1px solid var(--line)}
 .facts div{background:var(--ink);padding:28px}
 .facts b{display:block;font-family:var(--serif);font-weight:400;font-style:italic;font-size:54px;line-height:1;color:var(--tan)}
@@ -287,10 +288,15 @@ nav.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:
     <div class="grid">
       <span class="mono label">( About )</span>
       <div>
-        <p class="reveal-text" id="rtext">Sound Hacker is an audio production house in the heart of Dhaka. Built by radio ears and a rock band’s heart, we make sound for brands, artists, broadcasters and screen — from a ten-second jingle to a full album, in every genre in between.</p>
+        <p class="reveal-text" id="rtext">Sound Hacker is an audio production house in the heart of Dhaka. Built on years of FM radio and a rock band’s heart, we compose, record, design and mix sound for artists, brands and screen — from a ten-second jingle to a full album.</p>
+        <div class="story up">
+          <p>Sound Hacker began in 2018 as two friends with one obsession: composer, producer and sound engineer Shariful Islam Ghuddy and Md Rizvi Rahman. Today their Kakrail studio brings composition, recording, sound design, mixing and mastering under one roof.</p>
+          <p>Our roots are on air and on stage. Before Sound Hacker, Ghuddy spent years shaping sound for FM radio — Radio Bhumi 92.8 from 2012, Colours FM 101.6 from 2015 — while fronting the patriotic rock band Ghuddy. That mix of broadcast precision and a musician’s instinct is still how we work: every second has to earn its place, and every track has to make you feel something.</p>
+          <p>Today we make songs and albums, TV-drama and film scores, jingles and ad campaigns, NGO projects, dubbing and podcasts. One promise stays the same: <em style="color:var(--tan)">your sound, hacked to perfection.</em></p>
+        </div>
         <div class="facts up">
-          <div><b>No. 1</b><span>MTV Chart Attack — Song of the Week, “Sharoni 71”</span></div>
-          <div><b>GWR</b><span>Clear Men campaign jingle, part of a Guinness World Record</span></div>
+          <div><b>No. 1</b><span>MTV Chart Attack Song of the Week — “Sharoni 71” by Ghuddy</span></div>
+          <div><b>GWR</b><span>Jingle &amp; music for Clear Men’s “Pass Koro, Record Goro” — a Guinness World Records title (2025)</span></div>
           <div><b>On air</b><span>Sound design for FM radio since 2012</span></div>
         </div>
       </div>
@@ -376,10 +382,10 @@ var services = [
   ['Voice & Radio','Voice-over recording, editing and broadcast delivery.']
 ];
 var works = [
-  ['Sharoni 71','Ghuddy — No. 1 Song of the Week on MTV Chart Attack (2014).','Song','01'],
-  ['Clear Men Jingle','Campaign jingle — part of a Guinness World Record.','Jingle','02'],
-  ['Amake Nao','Rajkumar (2024) — music programming.','Film','03'],
-  ['Domm','Until the Last Breath — Chorki series, music arrangement.','Series','04']
+  ['Pass Koro, Record Goro','Clear Men (Unilever Bangladesh) — jingle & music. Guinness World Records title, 2025.','Campaign','01'],
+  ['Porcelaina','Tahsan Khan — Tahsan’s Playlist (2025). Arrangement, mixing & mastering.','Album','02'],
+  ['Kothay Pabo Tahare','From the film Domm (2026) — music arrangement.','Film','03'],
+  ['Sundori Komola','LUX — brand jingle.','Jingle','04']
 ];
 
 /* ---------- sound (Web Audio UI ticks) ---------- */
@@ -448,12 +454,12 @@ var segs=lm.querySelectorAll('i'), n=0;
 function finish(){ document.getElementById('loader').classList.add('done'); document.body.classList.add('ready'); }
 if(RM){ finish(); } else {
   var li=setInterval(function(){
-    n+=Math.ceil(Math.random()*7); if(n>100) n=100;
+    n+=Math.ceil(Math.random()*14)+6; if(n>100) n=100;
     lc.textContent=(n<10?'0':'')+n;
     var lit=Math.round(n/100*segs.length);
     segs.forEach(function(s,i){ s.className=i<lit?(i>=segs.length-4?'hot':'on'):''; });
-    if(n>=100){ clearInterval(li); setTimeout(finish,300); }
-  },45);
+    if(n>=100){ clearInterval(li); setTimeout(finish,120); }
+  },30);
 }
 
 /* ---------- clock ---------- */
@@ -461,7 +467,7 @@ function clock(){ try{ document.getElementById('clock').textContent=new Date().t
 clock(); setInterval(clock,15000);
 
 /* ---------- oscilloscope ---------- */
-var cv=document.getElementById('scope'), cx=cv.getContext('2d'), W=0,H=0,DPR=Math.min(2,window.devicePixelRatio||1);
+var cv=document.getElementById('scope'), cx=cv.getContext('2d'), W=0,H=0,DPR=1;
 var mx=0.5, my=0.5, tmx=0.5, tmy=0.5;
 function size(){ W=cv.clientWidth; H=cv.clientHeight; cv.width=W*DPR; cv.height=H*DPR; cx.setTransform(DPR,0,0,DPR,0,0); }
 size(); window.addEventListener('resize',size);
@@ -469,11 +475,11 @@ var t0=performance.now();
 function draw(now){
   var t=(now-t0)/1000; mx+=(tmx-mx)*0.05; my+=(tmy-my)*0.05;
   cx.clearRect(0,0,W,H);
-  var lines=9;
+  var lines=6;
   for(var L=0;L<lines;L++){
     var amp=(H*0.07+H*0.12*my)*(1-L/lines*0.6), freq=0.004+0.006*mx+L*0.0006, ph=t*(0.6+L*0.12)+L;
     cx.beginPath();
-    for(var x=0;x<=W;x+=4){
+    for(var x=0;x<=W;x+=8){
       var env=Math.sin(Math.PI*x/W);
       var y=H*0.42+Math.sin(x*freq+ph)*amp*env+Math.sin(x*freq*2.3-ph*1.4)*amp*0.35*env;
       if(x===0) cx.moveTo(x,y); else cx.lineTo(x,y);
@@ -481,8 +487,11 @@ function draw(now){
     cx.strokeStyle=L===0?'rgba(205,166,127,0.95)':'rgba(239,233,223,'+(0.05+0.18*(1-L/lines))+')';
     cx.lineWidth=L===0?1.6:1; cx.stroke();
   }
-  if(!RM) requestAnimationFrame(draw);
+  if(!RM && heroOn) requestAnimationFrame(draw); else drawing=false;
 }
+var heroOn=true, drawing=true;
+new IntersectionObserver(function(es){ heroOn=es[0].isIntersecting; if(heroOn&&!drawing&&!RM){ drawing=true; requestAnimationFrame(draw);} }).observe(cv);
+document.addEventListener('visibilitychange',function(){ heroOn=!document.hidden; if(heroOn&&!drawing&&!RM){ drawing=true; requestAnimationFrame(draw);} });
 requestAnimationFrame(draw);
 
 /* ---------- cursor ---------- */
@@ -495,7 +504,7 @@ window.addEventListener('mousemove',function(e){
 });
 if(FINE){
   document.body.classList.add('has-cursor');
-  (function loop(){ cxp+=(px-cxp)*0.18; cyp+=(py-cyp)*0.18; cur.style.transform='translate('+cxp+'px,'+cyp+'px) translate(-50%,-50%)'; requestAnimationFrame(loop); })();
+  (function loop(){ var dx=px-cxp, dy=py-cyp; if(Math.abs(dx)>0.3||Math.abs(dy)>0.3){ cxp+=dx*0.18; cyp+=dy*0.18; cur.style.transform='translate('+cxp+'px,'+cyp+'px) translate(-50%,-50%)'; } requestAnimationFrame(loop); })();
   document.addEventListener('mouseover',function(e){
     var el=e.target.closest('[data-cur],a,button');
     if(el&&el.hasAttribute('data-cur')){ cur.classList.add('big'); curl.textContent=el.getAttribute('data-cur'); tick(990); }
@@ -540,7 +549,7 @@ function onScroll(){
     var max=track.scrollWidth-innerWidth; track.style.transform='translateX('+(-p*max)+'px)'; hzp.style.width=(p*100)+'%';
   }
 }
-window.addEventListener('scroll',onScroll,{passive:true}); window.addEventListener('resize',onScroll); onScroll();
+var ticking=false; window.addEventListener('scroll',function(){ if(!ticking){ ticking=true; requestAnimationFrame(function(){ onScroll(); ticking=false; }); } },{passive:true}); window.addEventListener('resize',onScroll); onScroll();
 })();
 </script>
 </body>
